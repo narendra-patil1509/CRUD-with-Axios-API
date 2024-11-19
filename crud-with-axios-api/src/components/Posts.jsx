@@ -37,8 +37,8 @@ const Posts = () => {
       },[]);
 
   return (
-    <>
-    <section>
+    <section className="flex flex-wrap justify-center my-2">
+    <section className="my-5">
         <Form 
         data={data}
         setData={setData}
@@ -46,23 +46,23 @@ const Posts = () => {
         setUpdateDataApi={setUpdateDataApi} />
     </section>
     <section>
-        <ol>
+        <ol className="list-decimal list-inside marker:text-sky-400 marker:text-xl grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 grid-rows-5 gap-4 p-3 md:mx-20">
             {
                 data.map((currElem) => {
                     const {id, title, body} = currElem;
                     return (
-                        <li key={id}>
-                            <p>Title: {title}</p>
-                            <p>Body: {body}</p>
-                            <button onClick={()=> handleUpdatePost(currElem)}>Edit</button>
-                            <button onClick={()=> handleDeletePost(id)}>Delete</button>
+                        <li className="bg-[#212f3c] rounded-sm p-4 border-l-2 border-white" key={id}>
+                            <p className="text-gray-300 text-xl">Title: {title}</p>
+                            <p className="text-white mt-3 mb-3">Body: {body}</p>
+                            <button className='me-2 p-1 bg-green-500 hover:bg-green-400 text-white rounded-sm px-3' onClick={()=> handleUpdatePost(currElem)}>Edit</button>
+                            <button className='mx-2 p-1 bg-red-500 hover:bg-red-400 text-white rounded-sm px-3' onClick={()=> handleDeletePost(id)}>Delete</button>
                         </li>
                     );
                 })
             }
         </ol>
     </section>
-    </>
+    </section>
   )
 }
 

@@ -72,8 +72,8 @@ const Form = ({data, setData, updateDataApi, setUpdateDataApi}) => {
   }
 
   return (
-    <form onSubmit={handleSubmitForm}>
-        <div>
+    <form onSubmit={handleSubmitForm} className='flex flex-wrap  justify-center p-4 rounded-sm bg-[#212f3d]'>
+        <div className='mx-2 mb-3 sm:mb-0'>
             <label htmlFor="title"></label>
             <input type="text"
             autoComplete="off"
@@ -81,9 +81,10 @@ const Form = ({data, setData, updateDataApi, setUpdateDataApi}) => {
             name="title"
             placeholder="Add Title"
             value={addData.title}
-            onChange={handleInputChange} />
+            onChange={handleInputChange}
+            className='rounded-sm outline-none p-2 px-5' />
         </div>
-        <div>
+        <div className='mx-2 mb-3 sm:mb-0'>
         <label htmlFor="body"></label>
             <input type="text"
             autoComplete="off"
@@ -91,9 +92,10 @@ const Form = ({data, setData, updateDataApi, setUpdateDataApi}) => {
             name="body"
             placeholder="Add Body"
             value={addData.body}
-            onChange={handleInputChange} />
+            onChange={handleInputChange}
+            className='rounded-sm outline-none p-2 px-5' />
         </div>
-        <button type="submit" value={ isEmpty ? "Add" : "Edit"}>{ isEmpty ? "Add" : "Edit"}</button>
+        <button className='mx-4 p-1 bg-green-500 hover:bg-green-400 text-white rounded-sm px-5' type="submit" value={ isEmpty ? "Add" : "Edit"}>{ isEmpty ? "Add" : "Edit"}</button>
     </form>
   )
 }
